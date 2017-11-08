@@ -1,0 +1,14 @@
+- @candidates.each do | candidate |
+  -# TODO: Rename email to candidate
+  -# Implement email-item-selected., maybe with ajax?
+  .email-item.pure-g
+    .pure-u
+      %img.email-avatar{gravatar_attrs(candidate, :size => 64), :alt => "#{candidate.name}'s avatar"}/
+    .pure-u-3-4
+      -# TODO: Rename subject to name in CSS
+      %a{:href => overview_candidate_path(candidate)}
+        %h4.email-subject
+          = candidate[:name]
+      -# TODO: Rename name to project in CSS
+      %h5.email-name
+        = candidate[:project]

@@ -1,0 +1,33 @@
+- unless @candidate.errors.empty?
+  - @candidate.errors.each do | key, value |
+    = key
+    = value
+  %br
+  %br
+
+= form_for @candidate do |f|
+  = f.label :name
+  = f.text_field :name
+  %br
+  = f.label :project
+  = f.text_field :project
+  %br
+  = f.label :image
+  = f.text_field :image
+  %br
+  = f.label :email
+  = f.text_field :email
+  %br
+  = f.label :phone
+  = f.text_field :phone
+  %br
+  = f.label :job
+  = f.text_field :job
+  %br
+  = f.label :linkedin
+  = f.text_field :linkedin
+  %br
+  = f.label :address
+  = f.text_field :address
+  %br
+  = f.submit

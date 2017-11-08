@@ -1,0 +1,10 @@
+#list.pure-u-1
+  = render 'candidates', locals: {candidates: @candidates}
+
+#main.pure-u-1
+  - if @candidate
+    = render 'notes', locals: {note: @note, candidate: @candidate}
+  - else
+    %p
+      Please select a candidate from the list to the left, or create a new one
+    = link_to 'Add new candidate', new_candidate_path

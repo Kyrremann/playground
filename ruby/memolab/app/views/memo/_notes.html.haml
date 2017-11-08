@@ -1,0 +1,39 @@
+-# TODO: Change email to note
+.email-content
+  .email-content-header.pure-g
+    .pure-u-1-2
+      %h1.email-content-title
+        = @candidate.name
+      %h2.email-content-title
+        = @candidate.email
+      %h3.email-content-title
+        = @candidate.phone
+      %h4.email-content-title
+        = @candidate.job
+      -# @candidate.skills.each do | skill |
+        %span.post-category.post-category-design
+          = skill
+      .email-content-controls.pure-u-1-2
+        - unless @candidate.linkedin.empty?
+          %button.primary-button.pure-button LinkedIn
+        %a.secondary-button.pure-button{:href => edit_candidate_path(@candidate)}
+          Edit
+    - unless @notes.empty?
+      #notes
+        - @notes.each do | note |
+          .email-content-body
+            .email-item.pure-g
+              .pure-u
+                %h5.email-name
+                  = note.user_id
+                = note.updated_at
+              .pure-u-3-4
+                %p
+                  = note.message
+
+    .email-item.pure-g
+      .pure-u-3-4
+        %textarea{:id => "note_message", :style => 'width: 100%;'}
+      .pure-u
+        %button.pure-button{:onclick => 'postNote()'}
+          SEND

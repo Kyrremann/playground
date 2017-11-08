@@ -1,0 +1,757 @@
+{
+  "Misc": [
+    {
+      "size": "3 / ?",
+      "set_shortname": "WK",
+      "release": "-"
+    },
+    {
+      "size": "57 / ?",
+      "set_shortname": "WKD",
+      "release": "-"
+    },
+    {
+      "size": "62 / ?",
+      "set_shortname": "WKM",
+      "release": "-"
+    }
+  ],
+  "Upcoming": [
+    {
+      "size": "25 / ?",
+      "set_shortname": "WF",
+      "release": "02/10/2016"
+    },
+    {
+      "size": "0 / ?",
+      "set_shortname": "FF:WF",
+      "release": "02/10/2016"
+    }
+  ],
+  "Modern Age": [
+    {
+      "size": "84 / 84",
+      "set_shortname": "SMWW",
+      "release": "11/04/2015"
+    },
+    {
+      "size": "7 / 7",
+      "set_shortname": "FF:NFAOS",
+      "release": "08/12/2015"
+    },
+    {
+      "size": "101 / 101",
+      "set_shortname": "NFAOS",
+      "release": "08/12/2015"
+    },
+    {
+      "size": "93 / 93",
+      "set_shortname": "AOU",
+      "release": "06/01/2015"
+    },
+    {
+      "size": "7 / 7",
+      "set_shortname": "FF:OA",
+      "release": "05/27/2015"
+    },
+    {
+      "size": "87 / 87",
+      "set_shortname": "AVAS",
+      "release": "05/06/2015"
+    },
+    {
+      "size": "2 / 2",
+      "set_shortname": "AQS",
+      "release": "05/02/2015"
+    },
+    {
+      "size": "24 / 24",
+      "set_shortname": "AAOU",
+      "release": "04/01/2015"
+    },
+    {
+      "size": "7 / 7",
+      "set_shortname": "FF:JLTW",
+      "release": "02/25/2015"
+    },
+    {
+      "size": "94 / 94",
+      "set_shortname": "JLTW",
+      "release": "02/25/2015"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:FL",
+      "release": "11/12/2014"
+    },
+    {
+      "size": "79 / 79",
+      "set_shortname": "FL",
+      "release": "11/12/2014"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:GOTG",
+      "release": "08/13/2014"
+    },
+    {
+      "size": "98 / 98",
+      "set_shortname": "GOTG",
+      "release": "08/13/2014"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "JLSG",
+      "release": "07/09/2014"
+    },
+    {
+      "size": "24 / 24",
+      "set_shortname": "GOTGM",
+      "release": "07/02/2014"
+    },
+    {
+      "size": "251 / 251",
+      "set_shortname": "WOL",
+      "release": "06/01/2014"
+    },
+    {
+      "size": "30 / 30",
+      "set_shortname": "DOFP",
+      "release": "05/21/2014"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:DP",
+      "release": "05/14/2014"
+    },
+    {
+      "size": "103 / 103",
+      "set_shortname": "DP",
+      "release": "05/14/2014"
+    },
+    {
+      "size": "30 / 30",
+      "set_shortname": "CA:TWS",
+      "release": "03/12/2014"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:LOD",
+      "release": "02/26/2014"
+    },
+    {
+      "size": "85 / 85",
+      "set_shortname": "SLOSH",
+      "release": "02/26/2014"
+    },
+    {
+      "size": "84 / 84",
+      "set_shortname": "IIM",
+      "release": "11/20/2013"
+    },
+    {
+      "size": "29 / 29",
+      "set_shortname": "AvX",
+      "release": "11/20/2013"
+    },
+    {
+      "size": "21 / 21",
+      "set_shortname": "BMAO",
+      "release": "11/13/2013"
+    },
+    {
+      "size": "34 / 34",
+      "set_shortname": "TDW",
+      "release": "10/02/2013"
+    },
+    {
+      "size": "17 / 17",
+      "set_shortname": "BCTV",
+      "release": "09/18/2013"
+    },
+    {
+      "size": "104 / 104",
+      "set_shortname": "WXM",
+      "release": "08/21/2013"
+    },
+    {
+      "size": "5 / 5",
+      "set_shortname": "GC",
+      "release": "03/20/2013"
+    }
+  ],
+  "Other": [
+    {
+      "size": "21 / 21",
+      "set_shortname": "YGO3",
+      "release": "05/27/2015"
+    },
+    {
+      "size": "20 / 20",
+      "set_shortname": "BOTM",
+      "release": "02/01/2015"
+    },
+    {
+      "size": "21 / 21",
+      "set_shortname": "YGO2",
+      "release": "01/07/2015"
+    },
+    {
+      "size": "12 / 12",
+      "set_shortname": "HBT:BFA",
+      "release": "11/05/2014"
+    },
+    {
+      "size": "16 / 16",
+      "set_shortname": "ROTK",
+      "release": "06/04/2014"
+    },
+    {
+      "size": "62 / 62",
+      "set_shortname": "YGO",
+      "release": "01/08/2014"
+    },
+    {
+      "size": "35 / 35",
+      "set_shortname": "HBT:DOS",
+      "release": "11/13/2013"
+    },
+    {
+      "size": "5 / 5",
+      "set_shortname": "DOTA2",
+      "release": "11/13/2013"
+    },
+    {
+      "size": "37 / 37",
+      "set_shortname": "MKR",
+      "release": "11/06/2013"
+    },
+    {
+      "size": "50 / 50",
+      "set_shortname": "T2T",
+      "release": "11/06/2013"
+    },
+    {
+      "size": "5 / 5",
+      "set_shortname": "HBT:JLM",
+      "release": "10/30/2013"
+    },
+    {
+      "size": "33 / 33",
+      "set_shortname": "TREK3",
+      "release": "10/23/2013"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "LR",
+      "release": "08/14/2013"
+    },
+    {
+      "size": "18 / 18",
+      "set_shortname": "KA2",
+      "release": "07/31/2013"
+    },
+    {
+      "size": "13 / 13",
+      "set_shortname": "PR",
+      "release": "07/10/2013"
+    },
+    {
+      "size": "20 / 20",
+      "set_shortname": "BSI",
+      "release": "06/26/2013"
+    },
+    {
+      "size": "40 / 40",
+      "set_shortname": "FOTR",
+      "release": "06/19/2013"
+    },
+    {
+      "size": "9 / 9",
+      "set_shortname": "IM",
+      "release": "05/22/2013"
+    },
+    {
+      "size": "4 / 4",
+      "set_shortname": "STMG",
+      "release": "04/01/2013"
+    },
+    {
+      "size": "36 / 36",
+      "set_shortname": "STT2",
+      "release": "01/23/2013"
+    },
+    {
+      "size": "46 / 46",
+      "set_shortname": "HBT",
+      "release": "11/14/2012"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "ACR",
+      "release": "10/03/2012"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "ACB",
+      "release": "10/03/2012"
+    },
+    {
+      "size": "4 / 4",
+      "set_shortname": "SDCC",
+      "release": "07/12/2012"
+    },
+    {
+      "size": "7 / 7",
+      "set_shortname": "STTAT",
+      "release": "07/05/2012"
+    },
+    {
+      "size": "33 / 33",
+      "set_shortname": "TREK",
+      "release": "02/01/2012"
+    },
+    {
+      "size": "47 / 47",
+      "set_shortname": "LOTR",
+      "release": "12/01/2011"
+    },
+    {
+      "size": "45 / 45",
+      "set_shortname": "HALO",
+      "release": "09/01/2011"
+    },
+    {
+      "size": "33 / 33",
+      "set_shortname": "SF",
+      "release": "08/15/2011"
+    },
+    {
+      "size": "10 / 10",
+      "set_shortname": "GOW",
+      "release": "08/01/2011"
+    }
+  ],
+  "Golden Age": [
+    {
+      "size": "2 / 2",
+      "set_shortname": "EX",
+      "release": "10/28/2015"
+    },
+    {
+      "size": "2 / 2",
+      "set_shortname": "BMQS",
+      "release": "05/03/2014"
+    },
+    {
+      "size": "2 / 2",
+      "set_shortname": "SMQS",
+      "release": "09/18/2013"
+    },
+    {
+      "size": "25 / 25",
+      "set_shortname": "MOS",
+      "release": "06/05/2013"
+    },
+    {
+      "size": "102 / 102",
+      "set_shortname": "TT",
+      "release": "05/15/2013"
+    },
+    {
+      "size": "87 / 87",
+      "set_shortname": "FI",
+      "release": "05/15/2013"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:TT",
+      "release": "05/01/2013"
+    },
+    {
+      "size": "8 / 8",
+      "set_shortname": "TAE",
+      "release": "04/28/2013"
+    },
+    {
+      "size": "25 / 25",
+      "set_shortname": "IM3",
+      "release": "04/24/2013"
+    },
+    {
+      "size": "77 / 77",
+      "set_shortname": "ASM",
+      "release": "02/06/2013"
+    },
+    {
+      "size": "62 / 62",
+      "set_shortname": "SOG",
+      "release": "12/19/2012"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:SOG",
+      "release": "12/19/2012"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:BM",
+      "release": "11/14/2012"
+    },
+    {
+      "size": "91 / 91",
+      "set_shortname": "BM",
+      "release": "11/14/2012"
+    },
+    {
+      "size": "16 / 16",
+      "set_shortname": "NML",
+      "release": "11/01/2012"
+    },
+    {
+      "size": "15 / 15",
+      "set_shortname": "TAB",
+      "release": "09/26/2012"
+    },
+    {
+      "size": "24 / 24",
+      "set_shortname": "D10A",
+      "release": "09/12/2012"
+    },
+    {
+      "size": "24 / 24",
+      "set_shortname": "M10A",
+      "release": "09/12/2012"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:JL",
+      "release": "08/15/2012"
+    },
+    {
+      "size": "21 / 21",
+      "set_shortname": "JL52",
+      "release": "08/15/2012"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:CW",
+      "release": "07/11/2012"
+    },
+    {
+      "size": "79 / 79",
+      "set_shortname": "CW",
+      "release": "07/11/2012"
+    },
+    {
+      "size": "46 / 46",
+      "set_shortname": "DKR",
+      "release": "06/06/2012"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:WOL",
+      "release": "06/06/2012"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:GSX",
+      "release": "06/06/2012"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "AMS",
+      "release": "04/18/2012"
+    },
+    {
+      "size": "54 / 54",
+      "set_shortname": "AVM",
+      "release": "04/18/2012"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:GGA",
+      "release": "04/11/2012"
+    },
+    {
+      "size": "73 / 73",
+      "set_shortname": "GG",
+      "release": "04/11/2012"
+    },
+    {
+      "size": "16 / 16",
+      "set_shortname": "IG",
+      "release": "01/01/2012"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:SM",
+      "release": "12/01/2011"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:IH",
+      "release": "11/30/2011"
+    },
+    {
+      "size": "68 / 68",
+      "set_shortname": "IH",
+      "release": "11/01/2011"
+    },
+    {
+      "size": "70 / 70",
+      "set_shortname": "SM",
+      "release": "09/01/2011"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:WM",
+      "release": "07/06/2011"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:HA",
+      "release": "07/06/2011"
+    },
+    {
+      "size": "81 / 81",
+      "set_shortname": "CA",
+      "release": "07/01/2011"
+    },
+    {
+      "size": "6 / 6",
+      "set_shortname": "FF:GL",
+      "release": "05/01/2011"
+    },
+    {
+      "size": "10 / 10",
+      "set_shortname": "GL:GF",
+      "release": "05/01/2011"
+    },
+    {
+      "size": "81 / 81",
+      "set_shortname": "GX",
+      "release": "01/20/2011"
+    },
+    {
+      "size": "80 / 80",
+      "set_shortname": "AN",
+      "release": "12/01/2010"
+    },
+    {
+      "size": "7 / 7",
+      "set_shortname": "BD",
+      "release": "10/27/2010"
+    },
+    {
+      "size": "73 / 73",
+      "set_shortname": "WS",
+      "release": "09/08/2010"
+    },
+    {
+      "size": "27 / 27",
+      "set_shortname": "WM",
+      "release": "08/25/2010"
+    },
+    {
+      "size": "3 / 3",
+      "set_shortname": "JH",
+      "release": "06/21/2010"
+    },
+    {
+      "size": "8 / 8",
+      "set_shortname": "BN",
+      "release": "06/09/2010"
+    },
+    {
+      "size": "76 / 76",
+      "set_shortname": "BB",
+      "release": "04/14/2010"
+    },
+    {
+      "size": "18 / 18",
+      "set_shortname": "CL",
+      "release": "11/12/2009"
+    },
+    {
+      "size": "89 / 89",
+      "set_shortname": "HA",
+      "release": "07/23/2009"
+    },
+    {
+      "size": "84 / 84",
+      "set_shortname": "AA",
+      "release": "10/23/2008"
+    },
+    {
+      "size": "96 / 96",
+      "set_shortname": "SI",
+      "release": "07/24/2008"
+    },
+    {
+      "size": "31 / 31",
+      "set_shortname": "BA",
+      "release": "06/04/2008"
+    },
+    {
+      "size": "104 / 104",
+      "set_shortname": "CR",
+      "release": "02/01/2008"
+    },
+    {
+      "size": "97 / 97",
+      "set_shortname": "MU",
+      "release": "11/01/2007"
+    },
+    {
+      "size": "88 / 88",
+      "set_shortname": "JL",
+      "release": "09/01/2007"
+    },
+    {
+      "size": "12 / 12",
+      "set_shortname": "LS",
+      "release": "06/01/2007"
+    },
+    {
+      "size": "88 / 88",
+      "set_shortname": "AV",
+      "release": "06/01/2007"
+    },
+    {
+      "size": "16 / 16",
+      "set_shortname": "HB",
+      "release": "03/01/2007"
+    },
+    {
+      "size": "135 / 135",
+      "set_shortname": "OR",
+      "release": "02/01/2007"
+    },
+    {
+      "size": "9 / 9",
+      "set_shortname": "2099",
+      "release": "12/01/2006"
+    },
+    {
+      "size": "143 / 143",
+      "set_shortname": "SV",
+      "release": "11/01/2006"
+    },
+    {
+      "size": "8 / 8",
+      "set_shortname": "GL",
+      "release": "08/01/2006"
+    },
+    {
+      "size": "8 / 8",
+      "set_shortname": "IV",
+      "release": "07/01/2006"
+    },
+    {
+      "size": "136 / 136",
+      "set_shortname": "SN",
+      "release": "06/01/2006"
+    },
+    {
+      "size": "15 / 15",
+      "set_shortname": "DR",
+      "release": "06/01/2006"
+    },
+    {
+      "size": "7 / 7",
+      "set_shortname": "GI",
+      "release": "03/01/2006"
+    },
+    {
+      "size": "142 / 142",
+      "set_shortname": "CD",
+      "release": "02/01/2006"
+    },
+    {
+      "size": "138 / 138",
+      "set_shortname": "AW",
+      "release": "11/01/2005"
+    },
+    {
+      "size": "4 / 4",
+      "set_shortname": "CV",
+      "release": "10/31/2005"
+    },
+    {
+      "size": "84 / 84",
+      "set_shortname": "IO",
+      "release": "09/01/2005"
+    },
+    {
+      "size": "126 / 126",
+      "set_shortname": "FF",
+      "release": "06/01/2005"
+    },
+    {
+      "size": "135 / 135",
+      "set_shortname": "LG",
+      "release": "03/01/2005"
+    },
+    {
+      "size": "140 / 140",
+      "set_shortname": "MM",
+      "release": "11/01/2004"
+    },
+    {
+      "size": "4 / 4",
+      "set_shortname": "CH",
+      "release": "10/01/2004"
+    },
+    {
+      "size": "118 / 118",
+      "set_shortname": "UL",
+      "release": "06/01/2004"
+    },
+    {
+      "size": "126 / 126",
+      "set_shortname": "UI",
+      "release": "05/01/2004"
+    },
+    {
+      "size": "119 / 119",
+      "set_shortname": "UN",
+      "release": "03/01/2004"
+    },
+    {
+      "size": "119 / 119",
+      "set_shortname": "CM",
+      "release": "11/01/2003"
+    },
+    {
+      "size": "138 / 138",
+      "set_shortname": "IN",
+      "release": "10/01/2003"
+    },
+    {
+      "size": "119 / 119",
+      "set_shortname": "CJ",
+      "release": "06/01/2003"
+    },
+    {
+      "size": "116 / 116",
+      "set_shortname": "XP",
+      "release": "03/01/2003"
+    },
+    {
+      "size": "116 / 116",
+      "set_shortname": "CT",
+      "release": "11/01/2002"
+    },
+    {
+      "size": "155 / 155",
+      "set_shortname": "HT",
+      "release": "09/01/2002"
+    },
+    {
+      "size": "196 / 196",
+      "set_shortname": "IC",
+      "release": "05/01/2002"
+    }
+  ]
+}
