@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="Main" cloudDestinationProperty="Main" scrollableY="false" layout="BorderLayout" borderLayoutAbsoluteCenter="false" title="List" >
+  <component type="List" name="MainList" cloudDestinationProperty="MainList" >
+    <layoutConstraint value="Center" />
+    <stringItem value="Item 1" />
+    <stringItem value="Item 2" />
+    <stringItem value="Item 3" />
+  </component>
+</component>

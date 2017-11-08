@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Codename One API">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/CodenameOne.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="http://codenameone.googlecode.com/svn/trunk/CodenameOne/javadoc/index.html" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/CodenameOne_SRC.zip!/" />
+    </SOURCES>
+  </library>
+</component>

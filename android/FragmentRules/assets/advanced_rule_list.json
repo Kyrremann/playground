@@ -1,0 +1,34 @@
+{
+  "title": "Advanced rule list",
+  "rule 1": {
+    "english": "Rule number 1",
+    "norwegian": "Regel nummer 1",
+    "image": "testImage1"
+  },
+  "Nested rule 2": {
+    "rules": {
+      "rule 1": {
+        "english": "Rule number 1",
+        "norwegian": "Regel nummer 1",
+        "image": ""
+      }
+    },
+    "image": "testImage2"
+  },
+  "Sorted rule 3": {
+    "isSorted": true,
+    "list": [
+      {
+        "english": {
+          "name": "Row 1",
+          "text": "Text of item 1"
+        },
+        "norwegian": {
+          "name": "Rad 1",
+          "text": "Tekstlig innhold 1"
+        },
+        "image": "testImage2"
+      }
+    ]
+  }
+}

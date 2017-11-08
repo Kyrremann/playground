@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Fragment Rules</string>
+    <string name="package_name">no.minimon.fragmentrules</string>
+    <string name="e_mail">heroclix@fifthfloorstudio.net</string>
+    <string name="company_name"></string>
+    <string name="logo_cd">The Minimon logo. It\'s a monster.</string>
+    <string name="feedback_subject">Feedback: Fragment Rules</string>
+	<string name="feedback_email">post@minimon.no</string>
+    <string name="no_rule">This is not the rule you are looking for!</string>
+    <string name="front_page_button">Click here to see the sidebar with access to all the rules</string>
+	<string name="front_page_info">Welcome to the Fragment Rules example application app. Enjoy the framework.</string>
+
+    <string-array name="rules_array">
+        <item>Simple Rules List</item>
+	    <item>Nested Rules List</item>
+        <item>Sorted Rules List</item>
+    </string-array>
+
+    <string name="menu_settings">Settings</string>
+    <string name="menu_donate">Donate</string>
+    <string name="menu_feedback">Feedback</string>
+    <string name="menu_changelog">Changelog</string>
+    <string name="menu_about">About</string>
+    
+    <string name="donate_text">Thank you for considering donating. Press OK to open your browser and be redirected to Paypal.com.</string>
+	<string name="donate_url">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=ATWBY2VZ3SW7Q</string>
+
+    <string name="rate_url_playstore">market://details?id=heroclix.Rules</string>
+    <string name="rate_url_amazon">http://www.amazon.com/gp/mas/dl/android?p=heroclix.Rules</string>
+
+	<string name="about_message">Thank you for using Fragment Rules! Please donate and support us in making other great apps.\nThis application is aimed to make it easier for you to look up the different rules for games.</string>
+
+	<string name="changelog_title">Changelog</string>
+	<string name="changelog_button">See changelog</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    
+    <string name="dialog_title_about">About</string>
+    <string name="dialog_button_donate">Donate</string>
+    <string name="dialog_button_later">Later</string>
+    <string name="dialog_button_rate">Rate</string>
+
+	<!--TODO Remove the following lines-->
+    <string name="cost">Cost</string>
+    <string name="id">ID</string>
+    <string name="modifier">Modifier</string>
+    <string name="owner">Owner</string>
+    <string name="prerequisite">Prerequisite</string>
+    <string name="relic">Relic</string>
+    <string name="set">Set</string>
+    <string name="type">Type</string>
+	<string name="keywords">Keywords</string>
+	<string name="changelog_file">changelog.json</string>
+	<string name="changelong_missing_file">Can\'t find the changelog file.</string>
+
+</resources>

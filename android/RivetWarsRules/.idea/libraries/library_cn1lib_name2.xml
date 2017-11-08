@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="library.cn1lib.name">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/lib/impl/cls" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/lib/impl/stubs" />
+    </SOURCES>
+  </library>
+</component>

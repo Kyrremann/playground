@@ -1,0 +1,23 @@
+{
+  "title": "Simple rule list",
+  "rule 1": {
+    "english": "Rule number 1",
+    "norwegian": "Regel nummer 1"
+  },
+  "rule 2": {
+    "english": "Rule number 2",
+    "norwegian": "Regel nummer 2"
+  },
+  "rule 3": {
+    "english": "Rule number 3",
+    "norwegian": "Regel nummer 3"
+  },
+  "rule 4": {
+    "english": "Rule number 4",
+    "norwegian": "Regel nummer 4"
+  },
+  "rule 5": {
+    "english": "Rule number 5",
+    "norwegian": "Regel nummer 5"
+  }
+}

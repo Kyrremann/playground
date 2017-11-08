@@ -1,0 +1,59 @@
+{
+  "title": "Sorted rule list",
+  "isSorted": true,
+	"sorted_rule_list": [
+    {
+      "english": {
+        "name": "Row 1",
+        "text": "Text of item 1"
+      },
+      "norwegian": {
+        "name": "Rad 1",
+        "text": "Tekstlig innhold 1"
+      },
+      "image": "testImage2"
+    },
+    {
+      "english": {
+        "name": "Row 2",
+        "text": "Text of item 2"
+      },
+      "norwegian": {
+        "name": "Rad 2",
+        "text": "Tekstlig innhold 2"
+      },
+      "image": "testImage1"
+  },
+    {
+      "english": {
+        "name": "Row 3",
+        "text": "Text of item 3"
+      },
+      "norwegian": {
+        "name": "Rad 2",
+        "text": "Tekstlig innhold 3"
+      }
+  },
+    {
+      "english": {
+        "name": "Row 3",
+        "text": "Text of item 4"
+      },
+      "norwegian": {
+        "name": "Rad 4",
+        "text": "Tekstlig innhold 4"
+      }
+  },
+    {
+      "english": {
+        "name": "Row 4",
+        "text": "Text of item 4"
+      },
+      "norwegian": {
+        "name": "Rad 5",
+        "text": "Tekstlig innhold 5"
+      },
+      "image": "testImage2"
+  }
+ ]   
+}
