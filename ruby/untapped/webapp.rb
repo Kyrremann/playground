@@ -15,8 +15,11 @@ get '/stats/:username/?' do
          :beers => items.count,
          :unique_beers => distinct(items).count,
          :last_week => last_days(items, get_wday).count,
-         :beers_per_yr_day => beers_per_day(items, yr=true),
-         :beers_per_day => beers_per_day(items)
+         :most_per_day => beers_per_day(items).order(:count).reverse.first[:count],
+         :most_unique_per_day => "-1",
+
+         :beers_per_yr_day => beers_per_day(items),
+         :beers_per_day => beers_per_day(items, yr=false)
        }
 end
 

@@ -17,21 +17,23 @@ def filter_by_year(items, year)
 end
 
 def filter_by_brewery_country(items, country)
-  items.where(:brewery_country => country)
+  items.where(brewery_country: country)
 end
 
 def avg_abv(items)
   items.avg(:beer_abv)
 end
 
-def last_days(items, days)
-  items.where(created_day: (Date.today - days)..(Date.today))
+def last_days(items, days, yr=true)
+  items.where(get_column_name(yr) => (Date.today - days)..(Date.today))
 end
 
-def beers_per_day(items, yr=false)
-  if yr
-    items.group_and_count(:created_yr_day).order(:created_yr_day)
-  else
-    items.group_and_count(:created_day).order(:created_day)
-  end
+def beers_per_day(items, yr=true)
+  column_name = get_column_name(yr)
+  items.group_and_count(column_name).order(column_name)
+end
+
+private
+def get_column_name(yr)
+  (yr ? "created_yr_day" : "created_day").to_sym
 end

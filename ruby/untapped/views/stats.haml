@@ -14,6 +14,8 @@
         = haml :_box, :locals => {:title => "# beers", :text => locals[:beers]}
         = haml :_box, :locals => {:title => "# unique beers", :text => locals[:unique_beers]}
         = haml :_box, :locals => {:title => "this week", :text => locals[:last_week]}
+        = haml :_box, :locals => {:title => "most per day", :text => locals[:most_per_day]}
+        = haml :_box, :locals => {:title => "most unique per day", :text => locals[:most_unique_per_day]}
 
       - yr_beer_counts = locals[:beers_per_yr_day].all.map{|i|i[:count]}
       - yr_beer_days = locals[:beers_per_yr_day].all.map{|i|i[:created_yr_day].to_s}
