@@ -1,25 +1,14 @@
 require_relative 'engine'
 
-min = 10000
-max = -1
 sum = 0
-times = 1000
+times = ARGS.first || 100000
 
-p "Running #{times} times"
-
+e = Engine.new
+dice = Dice.new
 (0..times).each do |n|
-  e = Engine.new
-  dice = Dice.new
   e.start(dice)
   sum += e.score
-  if e.score > max
-    max = e.score
-  end
-  if e.score < min
-    min = e.score
-  end
+  e.reset
 end
 
-p "Max points: #{max}"
-p "Min points: #{min}"
 p "Avg points: #{sum / times.to_f}"
