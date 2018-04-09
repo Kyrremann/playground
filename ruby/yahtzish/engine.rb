@@ -1,10 +1,19 @@
 require_relative 'dice'
 
 class Engine
-  def initialize(verbose: false)
+  def initialize(verbose: false, categories: 6, rerolls: 3)
     @verbose = verbose
-    @categories = 6
-    @rerolls = 3
+    @categories = categories
+    @rerolls = rerolls
+    @results = {ones: nil,
+                twos: nil,
+                threes: nil,
+                fours: nil,
+                fives: nil,
+                sixes: nil}
+  end
+
+  def reset
     @results = {ones: nil,
                 twos: nil,
                 threes: nil,
