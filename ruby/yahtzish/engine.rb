@@ -5,36 +5,36 @@ class Engine
     @verbose = verbose
     @categories = categories
     @rerolls = rerolls
-    @results = {ones: nil,
-                twos: nil,
-                threes: nil,
-                fours: nil,
-                fives: nil,
-                sixes: nil}
+    @results = { ones: nil,
+                 twos: nil,
+                 threes: nil,
+                 fours: nil,
+                 fives: nil,
+                 sixes: nil }
   end
 
   def reset
-    @results = {ones: nil,
-                twos: nil,
-                threes: nil,
-                fours: nil,
-                fives: nil,
-                sixes: nil}
+    @results = { ones: nil,
+                 twos: nil,
+                 threes: nil,
+                 fours: nil,
+                 fives: nil,
+                 sixes: nil }
   end
 
   def start(dice)
-    (@categories).times do |roll|
+    @categories.times do |roll|
       (1..@rerolls).each do |reroll|
         dice.roll
 
         puts "Roll ##{roll + 1}.#{reroll}" if @verbose
-        puts "We got: #{dice.to_s}" if @verbose
+        puts "We got: #{dice}" if @verbose
         puts "Dice saved: #{dice.look_saved}" if @verbose
         save_value = think(dice, reroll)
-        puts "Saving dice showing: #{save_value}" if save_value and @verbose
+        puts "Saving dice showing: #{save_value}" if save_value && @verbose
       end
       add_result(dice)
-      puts "" if @verbose
+      puts '' if @verbose
       dice.reset
     end
 
@@ -42,23 +42,22 @@ class Engine
     puts @results if @verbose
   end
 
-  def results
-    @results
-  end
+  attr_reader :results
 
   def score
-    @results.sum {|key, die| die.nil? ? 0 : die[:points]}
+    @results.sum { |_key, die| die.nil? ? 0 : die[:points] }
   end
 
   private
-  def think(dice, reroll)
+
+  def think(dice, _reroll)
     return nil if no_usable_dice(dice)
 
     if dice.saved.empty?
-      most_of = dice.most_of.sort_by(&:last).sort_by{|k,v|k*v}.reverse
+      most_of = dice.most_of.sort_by(&:last).sort_by { |k, v| k * v }.reverse
       index = 0
       value = most_of[index][0]
-      while not available(value)
+      until available(value)
         index += 1
         value = most_of[index][0]
       end
@@ -72,7 +71,7 @@ class Engine
       end
     end
 
-    return value
+    value
   end
 
   def no_usable_dice(dice)
@@ -80,7 +79,7 @@ class Engine
   end
 
   def available(value)
-    keys = @results.select{|k,v| v.nil?}.keys
+    keys = @results.select { |_k, v| v.nil? }.keys
     keys.include?(value_as_key(value))
   end
 
@@ -94,7 +93,7 @@ class Engine
   end
 
   def available_results
-    @results.select{|k,v| v.nil?}.keys.map{|k| key_as_value(k)}    
+    @results.select { |_k, v| v.nil? }.keys.map { |k| key_as_value(k) }
   end
 
   def key_as_value(key)
@@ -112,7 +111,7 @@ class Engine
     when :sixes
       6
     end
-  end      
+  end
 
   def value_as_key(value)
     case value
