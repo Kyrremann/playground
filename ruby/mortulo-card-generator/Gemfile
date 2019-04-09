@@ -1,0 +1,4 @@
+source "https://rubygems.org"
+
+gem 'squib', '~> 0.14'
+gem 'game_icons', '~> 0.42'
