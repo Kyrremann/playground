@@ -1,0 +1,18 @@
+Tittel,Bilde,Kryddertekst,Hendelse,Poeng,Qty
+The prince,"delapouite/rolling-dices",The prince have died falling from a tree picking apples,Legg en gul kube hvor terningene viser,3,1
+The princess,"delapouite/rolling-dices",The princess empaled herself on a fence chasing sheep,Legg en gul kube hvor terningene viser,3,1
+The King,"delapouite/rolling-dices","The King is dead, long live the King!",Legg en gul kube hvor terningene viser,3,1
+The Queen,"delapouite/rolling-dices","It would have been a Romeo and Juliet story, hadn't been for the queen drinking the wrong type of posion.",Legg en gul kube hvor terningene viser,3,1
+Sailors,"delapouite/rolling-dices",,Legg D6 røde kuber hvor terningene viser,1,5
+Peasants,"delapouite/rolling-dices","Work, work!",Legg D6 røde kuber hvor terningene viser,1,10
+Nomads,"delapouite/rolling-dices",,Legg D6 røde kuber hvor terningene viser (flytt til nærmeste sandrute ved behov),1,5
+Elfs,"delapouite/rolling-dices",,Legg D6 røde kuber hvor terningene viser (flytt til nærmeste skogsrute ved behov),1,6
+Noble elf,"delapouite/rolling-dices",,Legg en X kube på nærmeste skogsrute,3,3
+Dwarf,"delapouite/rolling-dices",,Legg D6 røde kuber hvor terningene viser (flytt til nærmeste fjellrute ved behov),1,6
+Dwarf king,"delapouite/rolling-dices",,Legg en gul kube på nærmeste fjellrute,3,1
+Goblins,"delapouite/rolling-dices","Ahhh! They are everywhere!",Legg D6 røde kuber hvor terningene viser,1,6
+Plague,"delapouite/rolling-dices",Not again...,"For hver rute med røde kuber, legg til to ekstra røde kuber",,1
+Mining accident,"delapouite/rolling-dices",Hey! Why is the canary sleeping?,"For hver fjellrute med røde kuber, legg en rød kube i hver fjellrute ved siden av",,1
+Deep sea monsters,"delapouite/rolling-dices","Ach! Hans, it's the Kraken!","For hver sjørute med røde kuber, legg en rød kube i hver sjørute ved siden av",,1
+Timber!,"delapouite/rolling-dices",,"For hver skogsrute med røde kuber, legg en rød kube i hver skogsrute ved siden av",,1
+It's hard to swim,"delapouite/rolling-dices",I guess it wasn't worth a try,Legg en X kube i en ledig innsjørute (lyseblå),3,2
