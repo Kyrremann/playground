@@ -15,7 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 # We use HAML instead of ERB
-gem 'haml', '~> 4.0.7'
+gem 'haml', '~> 5.0.0'
 # Gravatar helper
 gem 'gravatarify', '~> 3.0.0'
 
