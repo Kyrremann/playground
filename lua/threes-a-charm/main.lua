@@ -1,5 +1,22 @@
+game = {
+   selected = {x = -1, y = -1},
+   tileSize = 128,
+   keymap = {q={1,1},w={2,1},e={3,1},r={4,1},
+	     a={1,2},s={2,2},d={3,2},f={4,2},
+	     y={1,3},u={2,3},i={3,3},o={4,3},
+	     h={1,4},j={2,4},k={3,4},l={4,4}},
+}
+
+fonts = {}
+score = require('score')
+levels = require('levels')
+matcher = require('matcher')
+
 function love.load()
    love.window.setMode(1440, 900, {fullscreen=true})
+
+   fonts.new('Kenney Thick.ttf', 'thick', 24)
+   levels.setup(4)
 
    animalsImage = love.graphics.newImage('square_nodetails.png')
    animals = {
@@ -8,106 +25,41 @@ function love.load()
    }
    local sw = animalsImage:getWidth()
    local sh = animalsImage:getHeight()
+   local tileSize = game.tileSize
    for i=1,5 do
-      animals.quads[i] = love.graphics.newQuad(1 + (128 * (i - 1)), 0, 128, 128, sw, sh)
-      animals.quads[i + 5] = love.graphics.newQuad(1 + (128 * (i - 1)), 128 * 1, 128, 128, sw, sh)
-      animals.quads[i + 10] = love.graphics.newQuad(1 + (128 * (i - 1)), 128 * 2, 128, 128, sw, sh)
-      animals.quads[i + 15] = love.graphics.newQuad(1 + (128 * (i - 1)), 128 * 3, 128, 128, sw, sh)
-      animals.quads[i + 20] = love.graphics.newQuad(1 + (128 * (i - 1)), 128 * 4, 128, 128, sw, sh)
-      animals.quads[i + 25] = love.graphics.newQuad(1 + (128 * (i - 1)), 128 * 5, 128, 128, sw, sh)
+      animals.quads[i] = love.graphics.newQuad(1 + (tileSize * (i - 1)), 0, tileSize, tileSize, sw, sh)
+      animals.quads[i + 5] = love.graphics.newQuad(1 + (tileSize * (i - 1)), tileSize * 1, tileSize, tileSize, sw, sh)
+      animals.quads[i + 10] = love.graphics.newQuad(1 + (tileSize * (i - 1)), tileSize * 2, tileSize, tileSize, sw, sh)
+      animals.quads[i + 15] = love.graphics.newQuad(1 + (tileSize * (i - 1)), tileSize * 3, tileSize, tileSize, sw, sh)
+      animals.quads[i + 20] = love.graphics.newQuad(1 + (tileSize * (i - 1)), tileSize * 4, tileSize, tileSize, sw, sh)
+      animals.quads[i + 25] = love.graphics.newQuad(1 + (tileSize * (i - 1)), tileSize * 5, tileSize, tileSize, sw, sh)
    end
 
-   game = {
-      clean_level = function() return {{}, {}, {}, {}, {}, {}, {}, {}, {}} end,
-      clicked = {x = -1, y = -1},
-      tileSize = 128
-   }
-
-   game.tileCoordinates = function(x, y)
-      return (x - 1) * game.tileSize, (y - 1) * game.tileSize
-   end
-
-   game.level = game.clean_level()
-   for x=1,9 do
-      for y=1,7 do
-	 game.level[x][y] = math.random(1, 30)
-      end
-   end
+   game.level = levels.newLevel(game.randomAnimal)
+   score.setup(fonts.thick[24], tileSize * 4 + tileSize/2, tileSize - fonts.thick[24]:getWidth("a"))
 end
 
 function love.update(dt)
-   checkForMatchingTiles()
-end
-
-function checkForMatchingTiles()
-   local level = game.level
-   for x,row in pairs(level) do
-      for y,tile in pairs(row) do
-	 findMatching(checkColumn(x, y, tile), x, y, tile)
-	 findMatching(checkRow(x, y, tile), x, y, tile)
-      end
-   end
-end
-
-function findMatching(matches, x, y, tile)
-   if matches >= 3 then
-      local matching = game.clean_level()
-      findAdjacents(matching, x, y, tile)
-      switchTiles(matching)
-      checkForMatchingTiles()
+   matches = matcher.checkForMatchingTiles(game.level)
+   if #matches > 0 then
+      switchTiles(matches)
+      score.awardPoints(#matches)
    end
 end
 
 function switchTiles(tiles)
-   for x,row in pairs(tiles) do
-      for y,tile in pairs(row) do
-	 game.level[x][y] = math.random(1, 30)
-      end
+   for i,t in ipairs(tiles) do
+      game.level[t.x][t.y] = game.randomAnimal(t.tile)
    end
-end
-
-function findAdjacents(matching, x, y, tile)
-   if x < 1 or y < 1 then return end
-   if x > #game.level or y > #game.level[x] then return end
-   if matching[x][y] then return end
-
-   if game.level[x][y] == tile then
-      matching[x][y] = tile
-      findAdjacents(matching, x, y + 1, tile)
-      findAdjacents(matching, x, y - 1, tile)
-      findAdjacents(matching, x + 1, y, tile)
-      findAdjacents(matching, x - 1, y, tile)
-   end
-end
-
-function checkRow(x, y, master)
-   if x > #game.level then return 0 end
-   tile = game.level[x][y]
-   if tile == master then
-      return 1 + checkRow(x + 1, y, master)
-   end
-
-   return 0
-end
-
-function checkColumn(x, y, master)
-   if y > #game.level[x] then return 0 end
-
-   tile = game.level[x][y]
-   if tile == master then
-      return 1 + checkColumn(x, y + 1, master)
-   end
-
-   return 0
 end
 
 function love.draw()
    local level = game.level
-   local clicked = game.clicked
+   local selected = game.selected
    for tx,row in pairs(level) do
       for ty,tile in pairs(row) do
 	 local x, y = game.tileCoordinates(tx, ty)
-	 if clicked.x == tx and clicked.y == ty then
+	 if selected.x == tx and selected.y == ty then
 	    love.graphics.setColor(0, 1, 0)
 	    love.graphics.draw(animals.batch:getTexture(), animals.quads[tile], x, y)
 	 else
@@ -116,23 +68,78 @@ function love.draw()
 	 end
       end
    end
+
+   score.draw()
+end
+
+
+function love.keyreleased(key)
+   if key == 'escape' then
+      love.event.quit()
+   end
+
+   if game.keymap[key] ~= nil then
+      local x, y = unpack(game.keymap[key])
+      if x and y then
+	 game.select(x, y)
+      end
+   end
 end
 
 function love.mousepressed(x, y)
-   local clicked = game.clicked
-   if clicked.x == -1 or clicked.y == -1 then
-      clicked.x = math.ceil(x / 128)
-      clicked.y = math.ceil(y / 128)
-   else
-      local x = math.ceil(x / 128)
-      local y = math.ceil(y / 128)
+   local x = math.ceil(x / game.tileSize)
+   local y = math.ceil(y / game.tileSize)
+   game.select(x, y)
+end
 
+function game.randomAnimal(tile)
+   local t = math.random(1, 5)
+   while t == tile do
+      t = math.random(1, 5)
+   end
+
+   return t
+end
+
+function game.select(x, y)
+   local selected = game.selected
+   if selected.x == -1 or selected.y == -1 then
+      selected.x = x
+      selected.y = y
+   else
       local level = game.level
       local tmpTile = level[x][y]
-      level[x][y] = level[clicked.x][clicked.y]
-      level[clicked.x][clicked.y] = tmpTile
+      level[x][y] = level[selected.x][selected.y]
+      level[selected.x][selected.y] = tmpTile
 
-      clicked.x = -1
-      clicked.y = -1
+      selected.x = -1
+      selected.y = -1
    end
+end
+
+function game.tileCoordinates(x, y)
+   return (x - 1) * game.tileSize, (y - 1) * game.tileSize
+end
+
+function fonts.new(file, name, size)
+   if not fonts[name] then
+      fonts[name] = {}
+   end
+   fonts[name][size] = love.graphics.newFont(file, size)
+end
+
+function printBoard()
+   print("")
+   local p = ""
+   for i=1,#game.level do p = p .. game.level[i][1] end
+   print(p)
+   p = ""
+   for i=1,#game.level do p = p .. game.level[i][2] end
+   print(p)
+   p = ""
+   for i=1,#game.level do p = p .. game.level[i][3] end
+   print(p)
+   p = ""
+   for i=1,#game.level do p = p .. game.level[i][4] end
+   print(p)
 end
