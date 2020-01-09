@@ -1,9 +1,9 @@
 lu = require('luaunit')
 score = require('score')
-score.setup(nil, 1)
+score:setup(nil, 1)
 
 function testAwardPoints()
-   score.awardPoints(10)
+   score:awardPoints(10)
    lu.assertEquals(score.points, 10)
 end
 

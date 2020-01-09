@@ -16,7 +16,7 @@ function love.load()
    love.window.setMode(1440, 900, {fullscreen=true})
 
    fonts.new('Kenney Thick.ttf', 'thick', 24)
-   levels.setup(4)
+   levels:setup(4)
 
    animalsImage = love.graphics.newImage('square_nodetails.png')
    animals = {
@@ -35,15 +35,15 @@ function love.load()
       animals.quads[i + 25] = love.graphics.newQuad(1 + (tileSize * (i - 1)), tileSize * 5, tileSize, tileSize, sw, sh)
    end
 
-   game.level = levels.newLevel(game.randomAnimal)
-   score.setup(fonts.thick[24], tileSize * 4 + tileSize/2, tileSize - fonts.thick[24]:getWidth("a"))
+   game.level = levels:newLevel(game.randomAnimal)
+   score:setup(fonts.thick[24], tileSize * 4 + tileSize/2, tileSize - fonts.thick[24]:getWidth("a"))
 end
 
 function love.update(dt)
-   matches = matcher.checkForMatchingTiles(game.level)
+   matches = matcher:checkForMatchingTiles(game.level)
    if #matches > 0 then
       switchTiles(matches)
-      score.awardPoints(#matches)
+      score:awardPoints(#matches)
    end
 end
 
@@ -69,7 +69,7 @@ function love.draw()
       end
    end
 
-   score.draw()
+   score:draw()
 end
 
 

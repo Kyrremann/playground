@@ -1,19 +1,19 @@
-local score = {}
+local Score = {}
 
-function score.setup(font, x, y)
-   score.points = 0
-   score.x = x
-   score.y = y
-   score.font = font
+function Score:setup(font, x, y)
+   self.points = 0
+   self.x = x
+   self.y = y
+   self.font = font
 end
 
-function score.draw()
-   love.graphics.setFont(score.font)
-   love.graphics.print(score.points, score.x, score.y)
+function Score:draw()
+   love.graphics.setFont(self.font)
+   love.graphics.print(self.points, self.x, self.y)
 end
 
-function score.awardPoints(points)
-   score.points = score.points + points
+function Score:awardPoints(points)
+   self.points = self.points + points
 end
 
-return score
+return Score
