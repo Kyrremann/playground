@@ -164,3 +164,9 @@ end
 function nearest_tile(num)
    return math.floor(num/64) * 64
 end
+
+function love.keypressed(key, scancode, isrepeat)
+   if key == "escape" then
+	  love.event.push("quit")
+   end
+end
