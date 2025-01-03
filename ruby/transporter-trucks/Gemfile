@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+# gem "rails"
+
+gem "squib", "~> 0.19.0"
+
+gem "game_icons", "~> 0.46.0"

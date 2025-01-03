@@ -1,0 +1,39 @@
+AllText:
+  font: ChunkFive Roman,Sans 18
+  align: center
+  color: '#000'
+
+LargeCityText:
+  width: 750
+  height: 1050
+  x: 250
+  y: 150
+  font_size: 24
+LargeCityIcon:
+  extends: LargeCityText
+  x: -= 175
+  y: -= 50
+  width: 150
+  height: 150
+
+MediumCityText:
+  extends: LargeCityText
+  y: += 200
+MediumCityIcon:
+  extends: LargeCityIcon
+  y: += 200
+
+SmallCityText:
+  extends: MediumCityText
+  y: += 200
+SmallCityIcon:
+  extends: MediumCityIcon
+  y: += 200
+
+Title:
+  x: 100
+  y: 700
+  font_size: 24
+Score:
+  extends: Title
+  y: += 100
