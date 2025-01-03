@@ -3,19 +3,19 @@ local sti = require "sti"
 
 function love.load()
    -- Load map file
-   map = sti("test_map.lua")
+   MAP = sti("rts-medieval.lua")
 
    -- Create new dynamic data layer called "Sprites" as the 4th layer
-   local layer = map:addCustomLayer("Sprites", 4)
+   local layer = MAP:addCustomLayer("Sprites", 4)
 
    -- Get player spawn object
    local player, camera
-   for k, object in pairs(map.objects) do
+   for _, object in pairs(MAP.objects) do
       if object.name == "Player" then
-	 player = object
+		 player = object
       elseif object.name == "Camera" then
-	 camera = object
-	 break
+		 camera = object
+		 break
       end
    end
 
@@ -27,7 +27,7 @@ function love.load()
       y      = player.y + 32,
       ox     = sprite:getWidth() / 2.2,
       oy     = sprite:getHeight() / 2,
-      tx     = player.x,
+	  tx     = player.x,
       ty     = player.y,
       dx     = 0,
       dy     = 0,
@@ -47,73 +47,77 @@ function love.load()
       local speed = 192--96
 
       -- Move camera up
-      if love.keyboard.isDown("w") or love.keyboard.isDown("up") then
-	 self.camera.y = math.min(0, self.camera.y + speed * dt)
+      if love.keyboard.isDown("w", "up") then
+		 self.camera.y = math.min(0, self.camera.y + speed * dt)
       end
 
       -- Move camera down
-      if love.keyboard.isDown("s") or love.keyboard.isDown("down") then
-	 -- TODO: -680 need to be calculated
-	 self.camera.y = math.max(-680, self.camera.y - speed * dt)
+      if love.keyboard.isDown("s", "down") then
+		 -- TODO: -680 need to be calculated
+		 self.camera.y = math.max(-680, self.camera.y - speed * dt)
       end
 
       -- Move camera left
-      if love.keyboard.isDown("a") or love.keyboard.isDown("left") then
-	 self.camera.x = math.min(0, self.camera.x + speed * dt)
+      if love.keyboard.isDown("a", "left") then
+		 self.camera.x = math.min(0, self.camera.x + speed * dt)
       end
 
       -- Move camera right
-      if love.keyboard.isDown("d") or love.keyboard.isDown("right") then
-	 -- TODO: -680 need to be calculated
-	 self.camera.x = math.max(-480, self.camera.x - speed * dt)
+      if love.keyboard.isDown("d", "right") then
+		 -- TODO: -480 need to be calculated
+		 self.camera.x = math.max(-480, self.camera.x - speed * dt)
       end
 
       if self.player.dist ~= 0 then
-	 local player = self.player
-	 player.x = player.x + (player.dx * dt)
-	 player.y = player.y + (player.dy * dt)
+		 local p = self.player
+		 p.x = p.x + (p.dx * dt)
+		 p.y = p.y + (p.dy * dt)
 
-	 local dist = (player.sx - player.x)^2 + (player.sy - player.y)^2
-	 if dist >= player.dist then
-	    -- Overshot - teleport to target instead.
-	    player.x = player.tx
-	    player.y = player.ty
-	    player.dx = 0
-	    player.dy = 0
-	 end
+		 local dist = (p.sx - p.x)^2 + (p.sy - p.y)^2
+		 if dist >= p.dist then
+			-- Overshot - teleport to target instead.
+			p.x = p.tx
+			p.y = p.ty
+			p.dx = 0
+			p.dy = 0
+		 end
       end
    end
-   
+
    -- Draw player
    layer.draw = function(self)
       love.graphics.draw(
-	 self.player.sprite,
-	 math.floor(self.player.x),
-	 math.floor(self.player.y),
-	 0,
-	 1,
-	 1,
-	 self.player.ox,
-	 self.player.oy
+		 self.player.sprite,
+		 math.floor(self.player.x),
+		 math.floor(self.player.y),
+		 0,
+		 1,
+		 1,
+		 self.player.ox,
+		 self.player.oy
       )
    end
 
-   map:removeLayer("Spawn Point")
+   MAP:removeLayer("Spawn Point")
 end
 
 function love.update(dt)
    -- Update world
-   map:update(dt)
+   MAP:update(dt)
 end
 
 function love.draw()
    -- Translate world so that camera is always centred
-   local camera = map.layers["Sprites"].camera
+   local camera = MAP.layers["Sprites"].camera
    local tx = math.floor(camera.x)
    local ty = math.floor(camera.y)
-   
+   -- local player = MAP.layers["Sprites"].player
+   -- local tx = math.floor(player.x - love.graphics.getWidth()  / 2)
+   -- local ty = math.floor(player.y - love.graphics.getHeight() / 2)
+
    -- Draw world
-   map:draw(tx, ty)
+   MAP:draw(tx, ty)
+   -- MAP:draw(-tx, -ty)
 
    draw_grid(tx, ty)
 end
@@ -121,30 +125,31 @@ end
 function draw_grid(tx, ty)
    love.graphics.setColor(255, 255, 255, 125)
    local number = math.ceil(math.max(love.graphics.getHeight(),
-				     love.graphics.getWidth()) / 64)
-   startx = tx + (math.floor(math.abs(tx) / 64) * 64)
-   starty = ty + (math.floor(math.abs(ty) / 64) * 64)
+									 love.graphics.getWidth()) / 64)
+   local startx = tx + (math.floor(math.abs(tx) / 64) * 64)
+   local starty = ty + (math.floor(math.abs(ty) / 64) * 64)
    for x=0, number do
-      lx = startx + (x * 64)
+      local lx = startx + (x * 64)
       love.graphics.line(lx, math.max(0, ty),
-			 lx, love.graphics.getHeight())
+						 lx, love.graphics.getHeight())
    end
 
    for y=0, number do
-      ly = starty + (y * 64)
+      local ly = starty + (y * 64)
       love.graphics.line(math.max(0, tx), ly,
-			 love.graphics.getWidth(), ly)
+						 love.graphics.getWidth(), ly)
    end
+
    love.graphics.setColor(255, 255, 255)
 end
 
 function love.mousereleased(x, y, button, istouch)
-   local player = map.layers["Sprites"].player
-   local camera = map.layers["Sprites"].camera
+   local player = MAP.layers["Sprites"].player
+   local camera = MAP.layers["Sprites"].camera
 
    player.sx = player.x
    player.sy = player.y
-   
+
    player.tx = nearest_tile(x - camera.x) + 31
    player.ty = nearest_tile(y - camera.y) + 31
 
@@ -153,7 +158,6 @@ function love.mousereleased(x, y, button, istouch)
    player.dx = 64 * math.cos(angle)
    player.dy = 64 * math.sin(angle)
 
-   
    player.dist = (player.tx - player.sx)^2 + (player.ty - player.sy)^2
 end
 
