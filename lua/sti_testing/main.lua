@@ -76,11 +76,16 @@ function love.load()
 
 		 local dist = (p.sx - p.x)^2 + (p.sy - p.y)^2
 		 if dist >= p.dist then
-			-- Overshot - teleport to target instead.
-			p.x = p.tx
-			p.y = p.ty
-			p.dx = 0
-			p.dy = 0
+			if p.pathIndex <= #p.path then
+			   setPlayerDestination(p)
+			else
+			   -- If overshot, ensure teleport to target.
+			   p.x = p.tx
+			   p.y = p.ty
+			   p.dx = 0
+			   p.dy = 0
+			   p.dist = 0
+			end
 		 end
       end
    end
@@ -100,6 +105,9 @@ function love.load()
    end
 
    MAP:removeLayer("Spawn Point")
+
+   DIJKSTRA = require "dijkstra"
+   DIJKSTRA:init(MAP.layers["ground"].data)
 end
 
 function love.update(dt)
@@ -145,18 +153,38 @@ function love.mousereleased(x, y, button, istouch)
    local player = MAP.layers["Sprites"].player
    local camera = MAP.layers["Sprites"].camera
 
+   local sx, sy = pixelToTile(player.x, player.y)
+   local tx, ty = pixelToTile(x - camera.x, y - camera.y)
+   local path, _ = DIJKSTRA:calculate({ x = sx, y = sy }, { x = tx, y = ty })
+
+   player.path = path
+   player.pathIndex = 1
+
+   setPlayerDestination(player)
+end
+
+function setPlayerDestination(player)
+   player.tx, player.ty = tileToPixel(player.path[player.pathIndex].x, player.path[player.pathIndex].y)
+
    player.sx = player.x
    player.sy = player.y
-
-   player.tx = nearest_tile(x - camera.x) + 31
-   player.ty = nearest_tile(y - camera.y) + 31
 
    local angle = math.atan2((player.ty - player.sy), (player.tx - player.sx))
 
    player.dx = 64 * math.cos(angle)
    player.dy = 64 * math.sin(angle)
 
-   player.dist = (player.tx - player.sx)^2 + (player.ty - player.sy)^2
+   player.dist = (player.tx - player.sx) ^ 2 + (player.ty - player.sy) ^ 2
+
+   player.pathIndex = player.pathIndex + 1
+end
+
+function pixelToTile(x, y)
+   return math.floor(x / 64) + 1, math.floor(y / 64) + 1
+end
+
+function tileToPixel(x, y)
+   return (x - 1) * 64 + 31, (y - 1) * 64 + 31
 end
 
 function nearest_tile(num)
