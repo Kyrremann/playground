@@ -1,5 +1,6 @@
 -- Include Simple Tiled Implementation into project
 local sti = require "sti"
+local love = require "love"
 
 function love.load()
    -- Load map file
@@ -111,30 +112,27 @@ function love.draw()
    local camera = MAP.layers["Sprites"].camera
    local tx = math.floor(camera.x)
    local ty = math.floor(camera.y)
-   -- local player = MAP.layers["Sprites"].player
-   -- local tx = math.floor(player.x - love.graphics.getWidth()  / 2)
-   -- local ty = math.floor(player.y - love.graphics.getHeight() / 2)
 
    -- Draw world
    MAP:draw(tx, ty)
-   -- MAP:draw(-tx, -ty)
 
    draw_grid(tx, ty)
 end
 
 function draw_grid(tx, ty)
    love.graphics.setColor(255, 255, 255, 125)
-   local number = math.ceil(math.max(love.graphics.getHeight(),
-									 love.graphics.getWidth()) / 64)
-   local startx = tx + (math.floor(math.abs(tx) / 64) * 64)
-   local starty = ty + (math.floor(math.abs(ty) / 64) * 64)
-   for x=0, number do
+   local grids = math.ceil(math.max(love.graphics.getHeight(),
+									love.graphics.getWidth()) / 64)
+   local startx = tx + nearest_tile(math.abs(tx))
+   local starty = ty + nearest_tile(math.abs(ty))
+
+   for x=0, grids do
       local lx = startx + (x * 64)
       love.graphics.line(lx, math.max(0, ty),
 						 lx, love.graphics.getHeight())
    end
 
-   for y=0, number do
+   for y=0, grids do
       local ly = starty + (y * 64)
       love.graphics.line(math.max(0, tx), ly,
 						 love.graphics.getWidth(), ly)
