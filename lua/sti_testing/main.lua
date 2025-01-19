@@ -70,9 +70,24 @@ function love.load()
       end
 
       if self.player.dist ~= 0 then
-		 local p = self.player
-		 p.x = p.x + (p.dx * dt)
-		 p.y = p.y + (p.dy * dt)
+         local p = self.player
+         local sx, sy = pixelToTile(p.x, p.y)
+         local s = 1
+         local weight = MAP.layers["ground"].data[sy][sx].properties.weight
+         if weight == 1 then
+            s = 3
+         elseif weight == 3 then
+            s = 2
+         elseif weight == 5 then
+            s = 1.5
+         elseif weight == 7 then
+            s = 1
+         elseif weight == 10 then
+            s = 0.5
+         end
+
+		 p.x = p.x + (p.dx * (dt * s))
+         p.y = p.y + (p.dy * (dt * s))
 
 		 local dist = (p.sx - p.x)^2 + (p.sy - p.y)^2
 		 if dist >= p.dist then
