@@ -13,10 +13,10 @@ function love.load()
    local player, camera
    for _, object in pairs(MAP.objects) do
       if object.name == "Player" then
-		 player = object
+         player = object
       elseif object.name == "Camera" then
-		 camera = object
-		 break
+         camera = object
+         break
       end
    end
 
@@ -28,7 +28,7 @@ function love.load()
       y      = player.y + 32,
       ox     = sprite:getWidth() / 2.2,
       oy     = sprite:getHeight() / 2,
-	  tx     = player.x,
+      tx     = player.x,
       ty     = player.y,
       dx     = 0,
       dy     = 0,
@@ -49,24 +49,24 @@ function love.load()
 
       -- Move camera up
       if love.keyboard.isDown("w", "up") then
-		 self.camera.y = math.min(0, self.camera.y + speed * dt)
+         self.camera.y = math.min(0, self.camera.y + speed * dt)
       end
 
       -- Move camera down
       if love.keyboard.isDown("s", "down") then
-		 -- TODO: -680 need to be calculated
-		 self.camera.y = math.max(-680, self.camera.y - speed * dt)
+         -- TODO: -680 need to be calculated
+         self.camera.y = math.max(-680, self.camera.y - speed * dt)
       end
 
       -- Move camera left
       if love.keyboard.isDown("a", "left") then
-		 self.camera.x = math.min(0, self.camera.x + speed * dt)
+         self.camera.x = math.min(0, self.camera.x + speed * dt)
       end
 
       -- Move camera right
       if love.keyboard.isDown("d", "right") then
-		 -- TODO: -480 need to be calculated
-		 self.camera.x = math.max(-480, self.camera.x - speed * dt)
+         -- TODO: -480 need to be calculated
+         self.camera.x = math.max(-480, self.camera.x - speed * dt)
       end
 
       if self.player.dist ~= 0 then
@@ -86,36 +86,36 @@ function love.load()
             s = 0.5
          end
 
-		 p.x = p.x + (p.dx * (dt * s))
+         p.x = p.x + (p.dx * (dt * s))
          p.y = p.y + (p.dy * (dt * s))
 
-		 local dist = (p.sx - p.x)^2 + (p.sy - p.y)^2
-		 if dist >= p.dist then
-			if p.pathIndex <= #p.path then
-			   setPlayerDestination(p)
-			else
-			   -- If overshot, ensure teleport to target.
-			   p.x = p.tx
-			   p.y = p.ty
-			   p.dx = 0
-			   p.dy = 0
-			   p.dist = 0
-			end
-		 end
+         local dist = (p.sx - p.x)^2 + (p.sy - p.y)^2
+         if dist >= p.dist then
+            if p.pathIndex <= #p.path then
+               setPlayerDestination(p)
+            else
+               -- If overshot, ensure teleport to target.
+               p.x = p.tx
+               p.y = p.ty
+               p.dx = 0
+               p.dy = 0
+               p.dist = 0
+            end
+         end
       end
    end
 
    -- Draw player
    layer.draw = function(self)
       love.graphics.draw(
-		 self.player.sprite,
-		 math.floor(self.player.x),
-		 math.floor(self.player.y),
-		 0,
-		 1,
-		 1,
-		 self.player.ox,
-		 self.player.oy
+         self.player.sprite,
+         math.floor(self.player.x),
+         math.floor(self.player.y),
+         0,
+         1,
+         1,
+         self.player.ox,
+         self.player.oy
       )
    end
 
@@ -145,20 +145,20 @@ end
 function draw_grid(tx, ty)
    love.graphics.setColor(255, 255, 255, 125)
    local grids = math.ceil(math.max(love.graphics.getHeight(),
-									love.graphics.getWidth()) / 64)
+                                    love.graphics.getWidth()) / 64)
    local startx = tx + nearest_tile(math.abs(tx))
    local starty = ty + nearest_tile(math.abs(ty))
 
    for x=0, grids do
       local lx = startx + (x * 64)
       love.graphics.line(lx, math.max(0, ty),
-						 lx, love.graphics.getHeight())
+                         lx, love.graphics.getHeight())
    end
 
    for y=0, grids do
       local ly = starty + (y * 64)
       love.graphics.line(math.max(0, tx), ly,
-						 love.graphics.getWidth(), ly)
+                         love.graphics.getWidth(), ly)
    end
 
    love.graphics.setColor(255, 255, 255)
@@ -208,6 +208,6 @@ end
 
 function love.keypressed(key, scancode, isrepeat)
    if key == "escape" then
-	  love.event.push("quit")
+      love.event.push("quit")
    end
 end
