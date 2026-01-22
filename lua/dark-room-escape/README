@@ -1,0 +1,11 @@
+Title: Dark Room Escape!
+Author: Julian Nymark and Kyrre Havik Eriksen
+Date: 24-26 May 2013
+Licence: GPL
+Information:
+
+It's written in Love2D / Lua.
+
+Uses the libraries AnAL (animation), and HUMP (for OOP)
+
+It was created for the Gamejam hosted by IFI at Sonen (UiO) on the 24th of May, 2013.

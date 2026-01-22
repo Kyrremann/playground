@@ -1,0 +1,35 @@
+MAP_SIZE
+14,12
+PLAYER_STARTING_LOCATION
+4,2
+LEVEL_GATE_LOCATION
+2,3
+ITEMS_LIST
+2,2;1000
+3,2;1001
+4,2;1002
+5,2;1003
+6,2;1004
+7,2;1005
+8,2;1006
+9,2;1007
+5,6;1008
+6,6;1009
+7,6;1010
+2,8;1012
+EVENT_LIST
+3;3;This is the test map!
+3;4;You cannot escape!
+MAP
+SSSSSSSSSSSSSS
+S............S
+S............S
+S............S
+S............S
+S............S
+S............S
+S............S
+S............S
+S.......SSSS.S
+S.......S....S
+SSSSSSSSSSSSSS

@@ -1,0 +1,36 @@
+MAP_SIZE
+18,12
+PLAYER_STARTING_LOCATION
+2,2;E
+LEVEL_GATE_LOCATION
+2,3
+ITEMS_LIST
+2,2;1002 (backpack)
+3,2;1004 (arrow_east)
+4,2;1003 (arrow_north)
+5,2;1005 (arrow_south)
+6,2;1006 (arrow_west)
+7,2;1000 (flashlight)
+8,2;1001 (lantern)
+9,2;1007 (map)
+10,2;1008 (wizard_hat)
+11,2;1009 (wizard_staff)
+12,2;1010 (spellbook)
+13,2;1012 (stick)
+14,2;1013 (magnet)
+EVENT_LIST
+3;3;This is the test map!
+3;4;You cannot escape!
+MAP
+SSSSSSSSSSSSSSSSSS
+S................S
+S.........S......S
+S........S.......S
+S....S.......S...S
+S..SSSS.SSSS.SS..S
+S..S.SS..........S
+S..S.........S...S
+S...SSS......S...S
+S.......SSSS...S.S
+S.S.....S....S...S
+SSSSSSSSSSSSSSSSSS
