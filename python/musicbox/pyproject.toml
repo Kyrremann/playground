@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "musicbox"
+version = "0.1.0"
+description = "Play music with rfid-tags with Yamaha MusicCast."
+authors = ["kyrremann"]
+license = "GPL"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pyamaha = { git = "https://github.com/rsc-dev/pyamaha.git" }
+mfrc522 = { git = "https://github.com/pimylifeup/MFRC522-python.git" }
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
