@@ -1,4 +1,3 @@
-Lekeplassen
------------
+Flyttet til Codeberg.
 
-Hvor idéene mine kan leke før de får sitt eget repository.
+https://codeberg.org/Kyrremann/lekeplass
