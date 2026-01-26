@@ -1,4 +1,4 @@
-Kyrre's playground
-------------------
+Lekeplassen
+-----------
 
-Where my project hatch before they are released into their own repos.
+Hvor idéene mine kan leke før de får sitt eget repository.
